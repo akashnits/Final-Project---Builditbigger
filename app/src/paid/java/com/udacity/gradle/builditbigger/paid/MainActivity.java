@@ -1,15 +1,16 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.paid;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-import com.example.JokeSupplier;
-import com.example.android.jokedisplaylib.JokeDisplay;
 
+import com.example.JokeSupplier;
+import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
+import com.udacity.gradle.builditbigger.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,10 +44,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        Intent intent= new Intent(this, JokeDisplay.class);
-        intent.putExtra("joke", new JokeSupplier().getJoke());
-        startActivity(intent);
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, new JokeSupplier().getJoke()));
     }
-
-
 }
