@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/HHpKtW_ZGaYaQjvV52b2FFzdFe0\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/MlFz9p5d1Tnt6EZ0r-ELuj01qdk\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -82,17 +82,9 @@
   }
  },
  "methods": {
-  "myApi.sayHi": {
-   "id": "myApi.sayHi",
-   "parameters": {
-    "name": {
-     "type": "string",
-     "required": true
-    }
-   },
-   "parameterOrder": [
-    "name"
-   ],
+  "myApi.getJoke": {
+   "id": "myApi.getJoke",
+   "allowGet": true,
    "returns": {
     "$ref": "MyBean"
    },
