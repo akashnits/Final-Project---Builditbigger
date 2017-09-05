@@ -11,6 +11,6 @@ public class JokeDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joke_display);
 
-        Toast.makeText(this, getIntent().getStringExtra("joke"), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getIntent().getStringExtra(getString(R.string.joke)), Toast.LENGTH_SHORT).show();
     }
 }

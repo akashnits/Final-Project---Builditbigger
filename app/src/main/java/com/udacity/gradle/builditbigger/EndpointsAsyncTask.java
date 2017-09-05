@@ -30,7 +30,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
         if(myApiService == null){
             MyApi.Builder builder= new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(),
                     null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                    .setRootUrl(mContext.getString(com.udacity.gradle.builditbigger.R.string.rootUrl))
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
@@ -52,7 +52,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         Intent intent= new Intent(mContext, JokeDisplay.class);
-        intent.putExtra("joke", s);
+        intent.putExtra(mContext.getString(R.string.joke), s);
         mContext.startActivity(intent);
     }
 }
